@@ -1,2 +1,2 @@
 # FunctionalProgramming
-Exercise solutions for the Functional Programming discipline
+Here you will find some codes made during functional programming classes at the Federal University of Campina Grande.
