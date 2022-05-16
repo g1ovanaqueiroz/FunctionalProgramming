@@ -45,3 +45,11 @@ isPrime a
 isPrime' :: Integer -> [Integer] -> Bool
 isPrime' x [] = True
 isPrime' x (y:ys) = if (mod x y) == 0 then False else isPrime' x ys
+
+{-
+- Calcula um termo da sequencia de Fibonnacci. Voce pode trabalhar com listas. 
+-}
+fib :: Integer -> Integer
+fib 1 = 1
+fib 2 = 1
+fib x = (fib (x-1)) + (fib (x-2))
