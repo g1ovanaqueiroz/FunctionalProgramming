@@ -53,3 +53,15 @@ fib :: Integer -> Integer
 fib 1 = 1
 fib 2 = 1
 fib x = (fib (x-1)) + (fib (x-2))
+
+{-
+- Calcula um MDC de dois numeros usando o algoritmo de Euclides. 
+-}
+mdc :: Integer -> Integer -> Integer
+mdc 0 y = y
+mdc x 0 = x
+mdc x y = mdc y (mod x y)
+
+{-
+- Calcula um MMC de dois numeros. 
+-}
