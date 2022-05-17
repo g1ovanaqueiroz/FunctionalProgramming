@@ -65,3 +65,14 @@ mdc x y = mdc y (mod x y)
 {-
 - Calcula um MMC de dois numeros. 
 -}
+mmc :: Integer -> Integer -> Integer
+mmc a b = head (listDivisiveis a b)
+
+listDivisiveis :: Integer -> Integer -> [Integer]
+listDivisiveis a b = filter (divisivel a b) (auxList a b)
+
+divisivel :: Integer -> Integer -> Integer -> Bool
+divisivel a b c = (mod a c == 0) && (mod b c == 0)
+
+auxList :: Integer -> Integer -> [Integer]
+auxList a b = [2.. (min a b)]
