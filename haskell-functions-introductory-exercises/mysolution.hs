@@ -119,3 +119,17 @@ myMinimum [x] = x
 myMinimum (x:xs)
     |x < myMinimum xs = x
     |otherwise = myMinimum xs
+
+mySum :: [Integer] -> Integer
+mySum [] = 0
+mySum [x] = x
+mySum (x:xs) = x + mySum xs
+
+myProduct :: [Integer] -> Integer
+myProduct [] = 1
+myProduct [x] = x
+myProduct (x:xs) = x * myProduct xs
+
+myElem :: Integer -> [Integer] -> Bool
+myElem _ [] = False
+myElem n (x:xs) = if n == x then True else myElem n xs
