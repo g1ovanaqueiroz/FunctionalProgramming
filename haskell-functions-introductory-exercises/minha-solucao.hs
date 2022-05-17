@@ -153,3 +153,8 @@ mrsLoop' :: Integer -> Integer -> Integer -> [Integer]
 mrsLoop' k dif m
     |k < m = []
     |otherwise = k : (mrsLoop' (k+dif) dif m)
+
+myCycle :: [a] -> [a]
+myCycle [] = error "myCycle: empty list"
+myCycle xs = xs ++ myCycle xs
+
