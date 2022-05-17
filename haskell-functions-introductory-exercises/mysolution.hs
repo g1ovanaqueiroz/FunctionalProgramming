@@ -107,3 +107,9 @@ myDrop :: Integer -> [a] -> [a]
 myDrop 0 xs = xs
 myDrop n [] = []
 myDrop n (x:xs) = myDrop (n-1) xs
+
+myMaximum :: [Integer] -> Integer
+myMaximum [x] = x
+myMaximum (x:xs)
+    |x > (myMaximum xs) = x
+    |otherwise = myMaximum xs
