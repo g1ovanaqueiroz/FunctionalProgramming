@@ -30,4 +30,4 @@ Alguns exemplos de linguagens funcionais são Clojure, Haskell e Elixir.
 
 <br/>
 
-### Espero que goste do que irá encontrar aqui. Que possa te ajudar a mudar seu jeito de pensar soluções como mudou o meu.
+Espero que goste do que irá encontrar aqui. Que possa te ajudar a mudar seu jeito de pensar soluções como mudou o meu. 💜

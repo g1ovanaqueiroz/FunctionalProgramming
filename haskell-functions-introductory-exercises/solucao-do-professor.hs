@@ -119,6 +119,8 @@ myElem x (y:ys) | x == y = True
 myRange k m | k <= m = [k] ++ myRange (succ k) m
             | otherwise = []
 
+{-Tem um problema nessa solucao, o p usado para atualizar o k nao eh a diferenca entre os numeros, mas o proprio segundo numero. A atualizacao deveria ser feita utilizando a diferenca
+Alem do fato dessa solucao nao lidar com diferencas negativas-}
 myRangeStep k p m | k <= m = [k] ++ myRangeStep (k+p) p m
             | otherwise = []
 

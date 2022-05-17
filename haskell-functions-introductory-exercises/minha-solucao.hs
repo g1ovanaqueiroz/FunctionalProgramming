@@ -138,3 +138,18 @@ myRange :: Integer -> Integer -> [Integer]
 myRange k m
     |k > m = []
     |otherwise = k : (myRange (succ k) m)
+
+myRangeStep :: Integer -> Integer -> Integer -> [Integer]
+myRangeStep k p m
+    |k < p = mrsLoop k (p-k) m
+    |otherwise = mrsLoop' k (p-k) m
+
+mrsLoop :: Integer -> Integer -> Integer -> [Integer]
+mrsLoop k dif m
+    |k > m = []
+    |otherwise = k : (mrsLoop (k+dif) dif m)
+
+mrsLoop' :: Integer -> Integer -> Integer -> [Integer]
+mrsLoop' k dif m
+    |k < m = []
+    |otherwise = k : (mrsLoop' (k+dif) dif m)
