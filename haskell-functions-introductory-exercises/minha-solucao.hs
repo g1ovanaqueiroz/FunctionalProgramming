@@ -138,4 +138,3 @@ myRange :: Integer -> Integer -> [Integer]
 myRange k m
     |k > m = []
     |otherwise = k : (myRange (succ k) m)
-
