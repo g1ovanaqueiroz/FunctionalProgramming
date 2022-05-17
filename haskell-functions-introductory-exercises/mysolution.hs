@@ -83,3 +83,27 @@ auxList a b = [2.. (min a b)]
 -}
 coprimo :: Integer -> Integer -> Bool
 coprimo a b = (mdc a b == 1)
+
+{- FUNCOES SOBRE LISTAS -}
+{-
+- Implemente suas versoes para as funcoes abaixo sobre listas "myFunc", seguindo a mesma semantica da funcao original "func"
+- Use pattern matching sempre que possivel ou entao guardas. 
+- Voce nao pode utilizar as respectivas funcoes originais mas implementar sua própria logica
+-}
+myLength :: [a] -> Integer
+myLength [] = 0
+myLength (x:xs) = 1 + myLength xs
+
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = (myReverse xs) ++ [x]
+
+myTake :: Integer -> [a] -> [a]
+myTake 0 _ = []
+myTake _ [] = []
+myTake n (x:xs) = (x:myTake (n-1) xs)
+
+myDrop :: Integer -> [a] -> [a]
+myDrop 0 xs = xs
+myDrop n [] = []
+myDrop n (x:xs) = myDrop (n-1) xs
