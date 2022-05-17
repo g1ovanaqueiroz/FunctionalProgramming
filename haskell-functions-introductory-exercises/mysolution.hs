@@ -133,3 +133,8 @@ myProduct (x:xs) = x * myProduct xs
 myElem :: Integer -> [Integer] -> Bool
 myElem _ [] = False
 myElem n (x:xs) = if n == x then True else myElem n xs
+
+myRange :: Integer -> Integer -> [Integer]
+myRange k m
+    |k > m = []
+    |otherwise = k : (myRange (succ k) m)
