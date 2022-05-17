@@ -76,3 +76,10 @@ divisivel a b c = (mod a c == 0) && (mod b c == 0)
 
 auxList :: Integer -> Integer -> [Integer]
 auxList a b = [2.. (min a b)]
+
+{-
+- Determina se dois numeros inteiros positivos sao co-primos. Dois numeros sao co-primos se 
+- o mdc deles for igual a 1. Ex: coprimo 35 64 = True 
+-}
+coprimo :: Integer -> Integer -> Bool
+coprimo a b = (mdc a b == 1)
