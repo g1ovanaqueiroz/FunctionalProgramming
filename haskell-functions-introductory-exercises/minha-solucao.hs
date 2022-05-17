@@ -158,3 +158,9 @@ myCycle :: [a] -> [a]
 myCycle [] = error "myCycle: empty list"
 myCycle xs = xs ++ myCycle xs
 
+myRepeat :: a -> [a]
+myRepeat n = n : (myRepeat n)
+
+myReplicate :: a -> Integer -> [a]
+myReplicate _ 0 = []
+myReplicate k n = k : (myReplicate k (n-1))
