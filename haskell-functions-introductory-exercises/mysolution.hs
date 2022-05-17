@@ -113,3 +113,9 @@ myMaximum [x] = x
 myMaximum (x:xs)
     |x > (myMaximum xs) = x
     |otherwise = myMaximum xs
+
+myMinimum :: [Integer] -> Integer
+myMinimum [x] = x
+myMinimum (x:xs)
+    |x < myMinimum xs = x
+    |otherwise = myMinimum xs
