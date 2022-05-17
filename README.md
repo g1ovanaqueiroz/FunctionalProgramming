@@ -1,7 +1,7 @@
 # Programação Funcional
 Aqui você irá encontrar alguns códigos feitos durante as aulas da disciplina de Programação Funcional, que cursei durante a graduação em Ciência da Computação na Universidade Federal de Campina Grande.
 
-### O que é Programação Funcional?
+## O que é Programação Funcional?
 
 A Programação Funcional é um paradigma de Liguagem de Programação. O paradigma funcional é baseado no modelo computacional de Cálculo Lambda, criado em 1930 por Alonzo Church (orientador do famoso matemático Allan Turing) e serviu como base para a criação do LISP – uma família de linguagens de programação desenvolvida por John McCarthy em 1958.
 
@@ -11,7 +11,7 @@ Isso significa que, no paradigma funcional, você tem uma função, coloca um da
 
 *****Além disso, no paradigma funcional não existem variáveis, mas constantes. Isso se traduz em códigos mais objetivos com constantes que, de forma geral, não mudam.*****
 
-### Porque usar Programação Funcional?
+## Porque usar Programação Funcional?
 
 O código em programação funcional tende a ser mais curto e objetivo, além de facilitar a manutenção do código e eventuais mudanças. É mais simples adicionar testes e isolar uma função para fazer análises e corrigir falhas.
 
@@ -28,4 +28,6 @@ Por isso, as linguagens funcionais são mais amigáveis para a implementação d
 No lugar de estruturas de repetição para iterar sobre listas, é recomendado o uso de funções como MAP e Reduce.
 Alguns exemplos de linguagens funcionais são Clojure, Haskell e Elixir.
 
-Espero que goste do que irá encontrar aqui. Que possa te ajudar a mudar seu jeito de pensar soluções como mudou o meu.
+<br/>
+
+### Espero que goste do que irá encontrar aqui. Que possa te ajudar a mudar seu jeito de pensar soluções como mudou o meu.
