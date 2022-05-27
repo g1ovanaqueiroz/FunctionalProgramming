@@ -17,7 +17,11 @@ elementAt i (x:xs) = elementAt (i-1) xs
 {-
 - Diz se uma lista é palindrome. 
 -}
-isPalindrome xs = undefined
+isPalindrome [] = True
+isPalindrome [x] = True
+isPalindrome xs
+    | (head xs == last xs) = isPalindrome ((tail.init) xs)
+    | otherwise = False
 
 {-
 - Remove os elementos duplicados de uma lista. Ex: compress [2,5,8,2,1,8] = [2,5,8,1]
