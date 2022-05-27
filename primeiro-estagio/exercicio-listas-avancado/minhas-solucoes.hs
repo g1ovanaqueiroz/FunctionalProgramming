@@ -36,7 +36,8 @@ compress (x:xs)
 - Varre a lista da esquerda para a direita e junta os elementos iguais. Ex: compact [2,5,8,2,1,8] = [2,2,5,8,8,1]
 - Voce pode usar funcoes sobre listas como : (cons), filter, etc.
 -}
-compact xs = undefined
+compact [] = []
+compact xs = (filter (== head xs) xs) ++ compact (filter (/= head xs) (tail xs))
 
 
 {-
