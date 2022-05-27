@@ -1,7 +1,9 @@
 {-
 - Encontra o penultimo elemento de uma lista. Caso a lista seja vazia ou tenha apenas um elemento retorne o seguinte comando: error "Lista sem penultimo" 
 -}
-penultimo xs = undefined
+penultimo [] = error "Lista sem penultimo"
+penultimo [x] = error "Lista sem penultimo"
+penultimo xs = (last.init) xs
 
 {-
 - Retorna o k-esimo (k varia de 0 ate N-1) elemento de uma lista. Ex: elementAt 2 [4,7,1,9] = 7
