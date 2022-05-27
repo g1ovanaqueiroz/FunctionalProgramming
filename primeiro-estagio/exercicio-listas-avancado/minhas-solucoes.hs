@@ -53,7 +53,12 @@ countElem (x:xs) ys =  (length.filter (==x)) ys : countElem xs (filter (/=x) (ta
 {-
 - Divide uma lista em duas sublistas onde o ponto de divisao é dado. Ex: split [3,6,1,9,4] 3 = [[3,6,1],[9,4]]
 -}
-split xs i = undefined
+split [] _ = []
+split xs i = split' [] xs i
+
+split' xs ys 0 = [xs,ys]
+split' xs [] i = error "Out of range"
+split' xs (y:ys) i = split' (xs ++ [y]) ys (i-1)
 
 {-
 - Extrai um pedaço (slice) de uma lista especificado por um intervalo. 
