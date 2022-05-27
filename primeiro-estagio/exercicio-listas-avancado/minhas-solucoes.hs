@@ -9,7 +9,10 @@ penultimo xs = (last.init) xs
 {-
 - Retorna o k-esimo (k varia de 0 ate N-1) elemento de uma lista. Ex: elementAt 2 [4,7,1,9] = 7
 -}
-elementAt i xs = undefined
+elementAt :: Integer -> [a] -> a
+elementAt _ [] = error "Out of range"
+elementAt 1 (x:xs) = x
+elementAt i (x:xs) = elementAt (i-1) xs
 
 {-
 - Diz se uma lista é palindrome. 
