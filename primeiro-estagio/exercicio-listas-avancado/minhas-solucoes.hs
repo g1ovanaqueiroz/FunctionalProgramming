@@ -44,7 +44,11 @@ compact xs = (filter (== head xs) xs) ++ compact (filter (/= head xs) (tail xs))
 - Retorna uma lista de pares com os elementos e suas quantidades. Ex: encode [2,2,2,3,4,2,5,2,4,5] = [(2,5),(3,1),(4,2),(5,2)]
 - Voce pode usar funcoes sobre listas como : (cons), filter, etc.
 -}
-encode xs = undefined
+encode [] = []
+encode xs = zip (compress xs) (countElem (compress xs) xs)
+
+countElem [] _ = []
+countElem (x:xs) ys =  (length.filter (==x)) ys : countElem xs (filter (/=x) (tail ys))
 
 {-
 - Divide uma lista em duas sublistas onde o ponto de divisao é dado. Ex: split [3,6,1,9,4] 3 = [[3,6,1],[9,4]]
