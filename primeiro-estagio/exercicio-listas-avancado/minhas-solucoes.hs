@@ -27,7 +27,10 @@ isPalindrome xs
 - Remove os elementos duplicados de uma lista. Ex: compress [2,5,8,2,1,8] = [2,5,8,1]
 - Voce pode usar a funcao elem de Haskell
 -}
-compress xs = undefined
+compress [] = []
+compress (x:xs)
+    | elem x xs =  x: (compress (filter (/= x) xs))
+    | otherwise = x : (compress xs)
 
 {-
 - Varre a lista da esquerda para a direita e junta os elementos iguais. Ex: compact [2,5,8,2,1,8] = [2,2,5,8,8,1]
