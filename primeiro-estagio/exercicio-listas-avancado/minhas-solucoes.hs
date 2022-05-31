@@ -67,7 +67,8 @@ slice xs imin imax = drop (imin-1) (take imax xs)
 - Insere um elemento em uma posicao especifica de uma lista. 
 - Ex: insertAt 7 4 [3,6,1,9,4] = [3,6,1,7,9,4]
 -}
-insertAt el pos xs = undefined
+insertAt el 1 xs = el:xs
+insertAt el pos xs = (take (pos-1) xs) ++ [el] ++ (drop (pos-1) xs)
 
 {-
 - Ordena uma lista em ordem crescente. Voce deve seguir a ideia do selectionsort onde os elementos 
