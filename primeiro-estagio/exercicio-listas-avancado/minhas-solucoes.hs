@@ -89,7 +89,11 @@ sort xs = x:ys
 - Dada a funcao max que retorna o maximo entre dois numeros, escreva uma funcao que usa a função
 - foldr e max para retornar o maximo de uma lista se a lista não é vazia.
 -}
-maxList xs = undefined
+maxList [] = error "Empty list"
+maxList xs = foldr max n ys
+    where
+        n = last xs
+        ys = init xs
 
 {-
 - Transforma uma string em uma palindrome acrescentando o reverso da string ao seu final sem usar a funcao reverse. 
