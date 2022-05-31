@@ -99,7 +99,12 @@ maxList xs = foldr max n ys
 - Transforma uma string em uma palindrome acrescentando o reverso da string ao seu final sem usar a funcao reverse. 
 - Ex: buildPalindrome [1,2,3] = [1,2,3,3,2,1]. 
 -}
-buildPalindrome xs = undefined
+buildPalindrome xs 
+    | isPalindrome xs = xs
+    | otherwise = xs ++ buildPalindrome' xs
+
+buildPalindrome' [] = []
+buildPalindrome' xs = [last xs] ++ (buildPalindrome' (init xs))
 
 {-
 - Computa a media dos elementos de uma lista de numeros, sem usar nenhuma funcao pronta de listas.
