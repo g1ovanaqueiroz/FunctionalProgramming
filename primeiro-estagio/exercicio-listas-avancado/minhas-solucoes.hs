@@ -60,7 +60,8 @@ split xs i = [(take i xs), (drop i xs)]
 - Extrai um pedaço (slice) de uma lista especificado por um intervalo. 
 - Ex: slice [3,6,1,9,4] 2 4 = [6,1,9]
 -}
-slice xs imin imax = undefined
+slice [] _ _ = []
+slice xs imin imax = drop (imin-1) (take imax xs)
 
 {-
 - Insere um elemento em uma posicao especifica de uma lista. 
