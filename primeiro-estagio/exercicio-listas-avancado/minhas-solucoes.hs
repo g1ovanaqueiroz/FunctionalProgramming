@@ -127,7 +127,11 @@ myAppend xs ys = foldr (:) ys xs
 {-
 - Encontra o primeiro elemento da lista que satisfaz o predicado p ou entao retorna um erro
 -}
-find p xs = undefined
+find :: (a -> Bool) -> [a] -> a
+find p [] = error "No element found"
+find p (x:xs)
+    | p x = x
+    | otherwise = find p xs
 
 {- 
 - Implementar quick sort usando compreensao de listas
