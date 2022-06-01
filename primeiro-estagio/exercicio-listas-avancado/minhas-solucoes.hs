@@ -122,7 +122,7 @@ myLength (x:xs) = 1 + myLength xs
 {-
 - Escreva a funcao myAppend que faz o append de uma lista xs com a lista ys, usando a função foldr. 
 -}
-myAppend xs ys = undefined
+myAppend xs ys = foldr (:) ys xs
 
 {-
 - Encontra o primeiro elemento da lista que satisfaz o predicado p ou entao retorna um erro
