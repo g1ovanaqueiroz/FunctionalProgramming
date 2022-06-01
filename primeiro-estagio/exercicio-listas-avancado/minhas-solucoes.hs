@@ -184,4 +184,4 @@ frequencia xs = zip uniques freq
 - listas e realiza a concatenacao de todas as listas. 
 - Ex: concat [[1,2],[3,4]] = [1,2,3,4]
 -}
-concatFoldr xs = undefined
+concatFoldr xs = foldr (++) [] xs
