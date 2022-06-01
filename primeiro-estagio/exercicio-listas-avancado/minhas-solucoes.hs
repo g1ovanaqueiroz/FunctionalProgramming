@@ -154,7 +154,7 @@ quickSortFilter (x:xs) = (quickSortFilter smaller) ++ [x] ++ (quickSortFilter gr
 {-
 - Implemente uma funcao que soma todos os elementos de uma lista usando foldl
 -}
-sumFoldl xs = undefined
+sumFoldl xs = foldl (+) 0 xs
 
 {-
 - Retorna uma lista sem repeticao a partir de uma lista possivelmente com elementos repetidos
