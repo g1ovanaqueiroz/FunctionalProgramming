@@ -141,7 +141,11 @@ quickSort xs = undefined
 {- 
 - Implementar quick sort usando filter
 -}
-quickSortFilter xs = undefined
+quickSortFilter [] = []
+quickSortFilter (x:xs) = (quickSortFilter smaller) ++ [x] ++ (quickSortFilter greater)
+    where
+        smaller = filter (<=x) xs
+        greater = filter (>x) xs
 
 {-
 - Implemente uma funcao que soma todos os elementos de uma lista usando foldl
