@@ -169,10 +169,14 @@ count x xs = (length.filter (==x)) xs
 
 {-
 - Dada uma lista de elementos possivelmente repetidos, retorna uma lista de 
-- pares contendo um elemento da lista odiginal e sua quantidade de ocorrencias
+- pares contendo um elemento da lista original e sua quantidade de ocorrencias
 - Cada elemento da lista original possui apenas um par correspondente na lista de resposta
 -}
-frequencia xs = undefined
+frequencia [] = []
+frequencia xs = zip uniques freq
+    where
+        uniques = [k | k <- (unique xs)]
+        freq = [count x xs | x <- uniques]
 
 {-
 - Funcao concat definida usando foldr
