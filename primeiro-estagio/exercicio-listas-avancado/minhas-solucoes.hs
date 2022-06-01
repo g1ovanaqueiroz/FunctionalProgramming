@@ -165,7 +165,7 @@ unique (x:xs) = x: unique (filter (/=x) xs)
 {-
 - Conta a quantidade de ocorrencias de um elemento em uma lista
 -}
-count x xs = undefined
+count x xs = (length.filter (==x)) xs
 
 {-
 - Dada uma lista de elementos possivelmente repetidos, retorna uma lista de 
