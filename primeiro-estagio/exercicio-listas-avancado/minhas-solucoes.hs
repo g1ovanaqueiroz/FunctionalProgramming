@@ -159,7 +159,8 @@ sumFoldl xs = foldl (+) 0 xs
 {-
 - Retorna uma lista sem repeticao a partir de uma lista possivelmente com elementos repetidos
 -}
-unique xs = undefined
+unique [] = []
+unique (x:xs) = x: unique (filter (/=x) xs)
 
 {-
 - Conta a quantidade de ocorrencias de um elemento em uma lista
