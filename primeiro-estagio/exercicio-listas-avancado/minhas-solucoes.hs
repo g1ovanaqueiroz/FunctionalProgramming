@@ -109,7 +109,15 @@ buildPalindrome' xs = [last xs] ++ (buildPalindrome' (init xs))
 {-
 - Computa a media dos elementos de uma lista de numeros, sem usar nenhuma funcao pronta de listas.
 -}
-mean xs = undefined
+
+mean [] = 0
+mean xs = fromIntegral(mySum xs)/fromIntegral(myLength xs)
+
+mySum [] = 0
+mySum (x:xs) = x + mySum xs
+
+myLength [] = 0
+myLength (x:xs) = 1 + myLength xs
 
 {-
 - Escreva a funcao myAppend que faz o append de uma lista xs com a lista ys, usando a função foldr. 
