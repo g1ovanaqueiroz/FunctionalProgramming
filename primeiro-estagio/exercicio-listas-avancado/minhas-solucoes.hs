@@ -136,7 +136,11 @@ find p (x:xs)
 {- 
 - Implementar quick sort usando compreensao de listas
 -}
-quickSort xs = undefined
+quickSort [] = []
+quickSort (x:xs) = (quickSort smaller) ++ [x] ++ (quickSort greater) 
+    where
+      smaller = [y | y <- xs, y <= x]
+      greater = [y | y <- xs, y > x]
 
 {- 
 - Implementar quick sort usando filter
