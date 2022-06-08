@@ -32,7 +32,8 @@ goldbach = \x -> [(a,b) | a <- filter isPrime [2..x-1], b <- filter isPrime [2..
 --consulte suas implementacoes anteriores para a documentacao dessas funcoes
 meuLast = \x -> (drop ((length x)-1) x)
 
-penultimo xs = undefined
+penultimo = \x -> (last.init) x
+
 elementAt i xs = undefined
 meuLength xs = undefined
 meuReverso xs = undefined
