@@ -3,7 +3,7 @@ square = \x -> x*x
 
 --Implemente as funções anteriormente escritas usando expressões lambda
 --consulte suas implementacoes anteriores para a documentacao dessas funcoes
-pow x y = undefined
+pow = \x y -> x**y
 fatorial x = undefined
 isPrime x = undefined
 fib x = undefined
