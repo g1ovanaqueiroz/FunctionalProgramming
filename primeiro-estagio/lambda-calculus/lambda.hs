@@ -48,7 +48,12 @@ meuReverso = \x ->
         [e] -> [e]
         (y:ys) -> (meuReverso ys) ++ [y]
 
-isPalindrome xs = undefined
+isPalindrome :: [Char] -> Bool
+isPalindrome = \x -> if ((meuLength x) == 1 || (meuLength x) == 0) then True else if (head x== last x) then isPalindrome ((tail.init) x) else False
+
+isPalindrome' :: [Integer] -> Bool
+isPalindrome' = \x -> if ((meuLength x) == 1 || (meuLength x) == 0) then True else if (head x== last x) then isPalindrome' ((tail.init) x) else False
+
 compress xs = undefined
 compact xs = undefined
 encode xs = undefined
