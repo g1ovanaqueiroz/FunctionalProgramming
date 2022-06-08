@@ -20,9 +20,12 @@ fib = \x ->
         2 -> 1
         x -> (fib (x-1)) + (fib (x-2))
 
-mdc x y = undefined
+mdc = \x y -> if (x==0) then y else if (y==0) then x else (mdc y (mod x y))
+
 mmc x y = undefined
+
 coprimo x y = undefined
+
 goldbach x = undefined
 
 --Implemente as funções sobre listas escritas previsamente usando expressões lambda
