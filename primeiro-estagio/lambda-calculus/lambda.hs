@@ -22,7 +22,7 @@ fib = \x ->
 
 mdc = \x y -> if (x==0) then y else if (y==0) then x else (mdc y (mod x y))
 
-mmc x y = undefined
+mmc = \x y -> head (filter ((\x y z -> (mod x z == 0) && (mod y z == 0)) x y) [2.. (min x y)])
 
 coprimo x y = undefined
 
