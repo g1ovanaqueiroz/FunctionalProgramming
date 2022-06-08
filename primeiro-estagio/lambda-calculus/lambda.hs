@@ -14,7 +14,12 @@ isPrime = \x ->
         3 -> True
         x -> not (any (\y -> x `mod` y == 0) [2..x - 1])
 
-fib x = undefined
+fib = \x ->
+    case x of
+        1 -> 1
+        2 -> 1
+        x -> (fib (x-1)) + (fib (x-2))
+
 mdc x y = undefined
 mmc x y = undefined
 coprimo x y = undefined
