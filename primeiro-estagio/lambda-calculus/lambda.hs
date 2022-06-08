@@ -42,7 +42,12 @@ meuLength = \x ->
         [e] -> 1
         (y:ys) -> 1 + meuLength ys
 
-meuReverso xs = undefined
+meuReverso = \x ->
+    case x of
+        [] -> []
+        [e] -> [e]
+        (y:ys) -> (meuReverso ys) ++ [y]
+
 isPalindrome xs = undefined
 compress xs = undefined
 compact xs = undefined
