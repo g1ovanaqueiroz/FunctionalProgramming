@@ -34,7 +34,9 @@ meuLast = \x -> (drop ((length x)-1) x)
 
 penultimo = \x -> (last.init) x
 
-elementAt i xs = undefined
+elementAt = \i xs -> if (i==1) then head xs else elementAt (i-1) (tail xs)
+
+
 meuLength xs = undefined
 meuReverso xs = undefined
 isPalindrome xs = undefined
