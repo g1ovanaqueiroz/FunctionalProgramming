@@ -30,7 +30,8 @@ goldbach = \x -> [(a,b) | a <- filter isPrime [2..x-1], b <- filter isPrime [2..
 
 --Implemente as funções sobre listas escritas previsamente usando expressões lambda
 --consulte suas implementacoes anteriores para a documentacao dessas funcoes
-meuLast xs = undefined
+meuLast = \x -> (drop ((length x)-1) x)
+
 penultimo xs = undefined
 elementAt i xs = undefined
 meuLength xs = undefined
