@@ -4,8 +4,16 @@ square = \x -> x*x
 --Implemente as funções anteriormente escritas usando expressões lambda
 --consulte suas implementacoes anteriores para a documentacao dessas funcoes
 pow = \x y -> x**y
+
 fatorial = \x -> if (x == 0) then 1 else (x * fatorial (x-1))
-isPrime x = undefined
+
+isPrime = \x -> 
+    case x of
+        1 -> False
+        2 -> True
+        3 -> True
+        x -> not (any (\y -> x `mod` y == 0) [2..x - 1])
+
 fib x = undefined
 mdc x y = undefined
 mmc x y = undefined
