@@ -36,8 +36,12 @@ penultimo = \x -> (last.init) x
 
 elementAt = \i xs -> if (i==1) then head xs else elementAt (i-1) (tail xs)
 
+meuLength = \x ->
+    case x of
+        [] -> 0
+        [e] -> 1
+        (y:ys) -> 1 + meuLength ys
 
-meuLength xs = undefined
 meuReverso xs = undefined
 isPalindrome xs = undefined
 compress xs = undefined
