@@ -24,9 +24,9 @@ mdc = \x y -> if (x==0) then y else if (y==0) then x else (mdc y (mod x y))
 
 mmc = \x y -> head (filter ((\x y z -> (mod x z == 0) && (mod y z == 0)) x y) [2.. (min x y)])
 
-coprimo x y = undefined
+coprimo = \x y -> (mdc x y == 1)
 
-goldbach x = undefined
+goldbach = \x -> [(a,b) | a <- filter isPrime [2..x-1], b <- filter isPrime [2..x-1], a+b == x]
 
 --Implemente as funções sobre listas escritas previsamente usando expressões lambda
 --consulte suas implementacoes anteriores para a documentacao dessas funcoes
