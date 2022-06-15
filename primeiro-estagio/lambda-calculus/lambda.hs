@@ -72,8 +72,20 @@ Funciona apenas para [Integer]
 compact :: [Integer] -> [Integer]
 compact = \x -> (filter (== head x) x) ++ compact (filter (/= head x) (tail x))
 
+encode :: [Integer] -> [(Integer,Integer)]
+encode = \x ->
+    case x of
+        [] -> []
+        x -> zip (compress x) (countElem (compress x) x)
 
-encode xs = undefined
+countElem :: [Integer] -> [Integer ]-> [Integer]
+countElem = \x y ->
+    case y of
+        [] -> []
+        y -> (meuLength (filter (== (head x)) y)): countElem (tail x) (filter (/= (head x)) (tail y))
+
+
+
 split xs i = undefined
 slice xs imin imax = undefined
 insertAt el pos xs = undefined
