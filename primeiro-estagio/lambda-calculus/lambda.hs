@@ -130,6 +130,29 @@ maxList = \x ->
         [] -> error "Empty list"
         x -> foldr max (last x) (init x)
 
-buildPalindrome xs = undefined
+{-
+Funciona para [Char]
+-}
+buildPalindrome :: [Char] -> [Char]
+buildPalindrome = \xs -> if (isPalindrome xs) then xs else xs ++ buildPalindrome' xs
+
+buildPalindrome' :: [Char] -> [Char]
+buildPalindrome' = \xs ->
+    case xs of
+        [] -> []
+        xs -> [last xs] ++ (buildPalindrome' (init xs))
+
+{-
+Funciona para [Int]
+-}
+buildPalindrome1 :: [Integer] -> [Integer]
+buildPalindrome1 = \xs -> if (isPalindrome' xs) then xs else xs ++ buildPalindrome1' xs
+
+buildPalindrome1' :: [Integer] -> [Integer]
+buildPalindrome1' = \xs ->
+    case xs of
+        [] -> []
+        xs -> [last xs] ++ (buildPalindrome1' (init xs))
+
 mean xs = undefined
 myAppend xs ys = undefined
