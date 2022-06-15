@@ -118,7 +118,12 @@ sort = \x ->
         [] -> []
         x -> (minList x):(sort (remove (minList x) x))
 
-mySum xs = undefined
+mySum :: [Int] -> Int
+mySum = \x ->
+    case x of
+        [] -> 0
+        x -> (head x) + mySum (tail x)
+
 maxList xs = undefined
 buildPalindrome xs = undefined
 mean xs = undefined
