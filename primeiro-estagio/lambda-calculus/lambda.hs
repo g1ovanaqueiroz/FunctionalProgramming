@@ -124,7 +124,12 @@ mySum = \x ->
         [] -> 0
         x -> (head x) + mySum (tail x)
 
-maxList xs = undefined
+maxList :: [Int] -> Int
+maxList = \x ->
+    case x of
+        [] -> error "Empty list"
+        x -> foldr max (last x) (init x)
+
 buildPalindrome xs = undefined
 mean xs = undefined
 myAppend xs ys = undefined
