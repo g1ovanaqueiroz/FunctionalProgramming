@@ -91,7 +91,12 @@ split = \x i ->
         [] -> []
         x -> [(take i x), (drop i x)]
 
-slice xs imin imax = undefined
+slice :: [Int] -> Int -> Int -> [Int]
+slice = \xs imin imax ->
+    case xs of
+        [] -> []
+        xs -> drop (imin-1) (take imax xs)
+
 insertAt el pos xs = undefined
 sort xs = undefined
 mySum xs = undefined
