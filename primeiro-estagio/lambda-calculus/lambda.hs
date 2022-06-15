@@ -143,7 +143,7 @@ buildPalindrome' = \xs ->
         xs -> [last xs] ++ (buildPalindrome' (init xs))
 
 {-
-Funciona para [Int]
+Funciona para [Integer]
 -}
 buildPalindrome1 :: [Integer] -> [Integer]
 buildPalindrome1 = \xs -> if (isPalindrome' xs) then xs else xs ++ buildPalindrome1' xs
@@ -154,5 +154,9 @@ buildPalindrome1' = \xs ->
         [] -> []
         xs -> [last xs] ++ (buildPalindrome1' (init xs))
 
-mean xs = undefined
+mean = \x ->
+    case x of
+        [] -> 0
+        x -> fromIntegral(mySum x)/fromIntegral(meuLength x)
+
 myAppend xs ys = undefined
