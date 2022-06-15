@@ -159,4 +159,5 @@ mean = \x ->
         [] -> 0
         x -> fromIntegral(mySum x)/fromIntegral(meuLength x)
 
+myAppend :: [Int] -> [Int] -> [Int]
 myAppend = \xs ys -> foldr (:) ys xs
