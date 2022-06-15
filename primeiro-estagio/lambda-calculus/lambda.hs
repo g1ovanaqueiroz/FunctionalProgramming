@@ -64,7 +64,7 @@ isPalindrome' = \x -> if ((meuLength x) == 1 || (meuLength x) == 0) then True el
 Funciona apenas para [Integer]
 -}
 compress :: [Integer] -> [Integer]
-compress = \x -> if ((meuLength x == 0) || (meuLength x == 1)) then x else if (elem (head x) (tail x)) then (head x): (compress (filter (/= (head x)) (tail x))) else (head x):compress (tail x)
+compress = \x -> if ((meuLength x <= 1)) then x else if (elem (head x) (tail x)) then (head x): (compress (filter (/= (head x)) (tail x))) else (head x):compress (tail x)
 
 {-
 Funciona apenas para [Integer]
@@ -103,7 +103,21 @@ insertAt = \el pos xs ->
         1 -> el:xs
         pos -> (take (pos-1) xs) ++ [el] ++ (drop (pos-1) xs)
 
-sort xs = undefined
+minList :: [Int] -> Int
+minList = \xs ->
+    case xs of
+        [e] -> e
+        xs -> if ((head xs) < (minList (tail xs))) then (head xs) else minList (tail xs)
+
+remove :: Int -> [Int] -> [Int]
+remove = \e (x:xs) -> if (e == x) then xs else x:(remove e xs)
+
+sort :: [Int] -> [Int]
+sort = \x ->
+    case x of
+        [] -> []
+        x -> (minList x):(sort (remove (minList x) x))
+
 mySum xs = undefined
 maxList xs = undefined
 buildPalindrome xs = undefined
