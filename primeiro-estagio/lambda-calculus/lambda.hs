@@ -66,7 +66,13 @@ Funciona apenas para [Integer]
 compress :: [Integer] -> [Integer]
 compress = \x -> if ((meuLength x == 0) || (meuLength x == 1)) then x else if (elem (head x) (tail x)) then (head x): (compress (filter (/= (head x)) (tail x))) else (head x):compress (tail x)
 
-compact xs = undefined
+{-
+Funciona apenas para [Integer]
+-}
+compact :: [Integer] -> [Integer]
+compact = \x -> (filter (== head x) x) ++ compact (filter (/= head x) (tail x))
+
+
 encode xs = undefined
 split xs i = undefined
 slice xs imin imax = undefined
