@@ -85,8 +85,12 @@ countElem = \x y ->
         y -> (meuLength (filter (== (head x)) y)): countElem (tail x) (filter (/= (head x)) (tail y))
 
 
+split :: [Integer] -> Int -> [[Integer]]
+split = \x i ->
+    case x of
+        [] -> []
+        x -> [(take i x), (drop i x)]
 
-split xs i = undefined
 slice xs imin imax = undefined
 insertAt el pos xs = undefined
 sort xs = undefined
