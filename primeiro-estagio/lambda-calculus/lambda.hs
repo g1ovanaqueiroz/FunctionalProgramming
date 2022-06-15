@@ -97,7 +97,12 @@ slice = \xs imin imax ->
         [] -> []
         xs -> drop (imin-1) (take imax xs)
 
-insertAt el pos xs = undefined
+insertAt :: Int -> Int -> [Int] -> [Int]
+insertAt = \el pos xs ->
+    case pos of
+        1 -> el:xs
+        pos -> (take (pos-1) xs) ++ [el] ++ (drop (pos-1) xs)
+
 sort xs = undefined
 mySum xs = undefined
 maxList xs = undefined
