@@ -72,7 +72,11 @@ insert v (Node x left right)
     | otherwise = insert v left
 
 --retorna o Node da BST contendo o dado procurado ou entao NIL
-search = undefined
+search v NIL = NIL
+search v (Node x left right)
+    | v == x = (Node x left right)
+    | v > x = search right
+    | otherwise = search left
 
 --retorna o elmento maximo da BST
 maximum_ NIL = 0
